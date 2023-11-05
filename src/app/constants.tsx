@@ -9,10 +9,13 @@ export const EXPERIENCES: Array<ExperienceCardProps> = [
     description: (
       <ul className="list-disc">
         <li>
-          Building the web app using next.js (hosted on vercel) and postgreSQL
-          (hosted on supabase)
+          Responsible for the entire web app built on top of next.js and
+          postgreSQL (deployed through vercel and supabase respectively).
         </li>
-        <li>Building a chrome extension to perform agentic actions</li>
+        <li>
+          Responsible for building a chrome extension capable of carrying out
+          agentic actions (such as filling out forms, clicking buttons, etc.)
+        </li>
       </ul>
     ),
   },
@@ -25,17 +28,16 @@ export const EXPERIENCES: Array<ExperienceCardProps> = [
       <ul className="list-disc">
         <li>
           Worked with the forms team as part of the ongoing org-wide rewrite to
-          rebuild the frontend for the forms product as a separate
-          microfrontend.
+          rebuild the frontend for the forms product as a separate microfrontend
         </li>
         <li>
           Worked to help build a custom table from scratch to replace currently
           used off-the-shelf solutions (such as handsontable / glide-table) in
-          order to better serve our specific niche use-cases.
+          order to better serve our specific niche use-cases
         </li>
         <li>
           Working with the recon team to revamp the frontend (built out using
-          the BFF pattern) as part of a re-write to shore up the recon product.
+          the BFF pattern) as part of a re-write to shore up the recon product
         </li>
       </ul>
     ),
@@ -53,23 +55,23 @@ export const EXPERIENCES: Array<ExperienceCardProps> = [
         </li>
         <li>
           Worked with the desktop team and built out features for the desktop
-          app (using electronJS and puppeteer).
+          app (using electronJS and puppeteer)
         </li>
         <li>
           Worked with the reports team to build out the frontend for various
           reports used by enterprises (monolithic frontend using nextJS and
           graphQL) and supporting issues raised with the reporting BE server
-          (using nodeJS).
+          (using nodeJS)
         </li>
         <li>
           Worked with the MAX TAX team to build out the frontend from scratch
           for the reports aspect of the new MAX TAX product (0 - 1 project built
-          out as a microfrontend using webpack module federation).
+          out as a microfrontend using webpack module federation)
         </li>
         <li>
           Worked with the reports team as part of the ongoing org-wide rewrite
           to rebuild the frontend for the reports product (comprising of over 30
-          reports and built out as a separate microfrontend).
+          reports and built out as a separate microfrontend)
         </li>
       </ul>
     ),
@@ -83,7 +85,7 @@ export const EXPERIENCES: Array<ExperienceCardProps> = [
       <ul className="list-disc">
         <li>
           Was part of the team involved in building out functionalities for the
-          MOSAIC platform of the Goldman Sachs Liquidity Solutions Portal.
+          MOSAIC platform of the Goldman Sachs Liquidity Solutions Portal
         </li>
         <li>
           Implemented the Backend functionality to generate a PDF corresponding
