@@ -18,10 +18,10 @@ export default function Home() {
       </header>
       <main className="flex-1 w-full max-w-4xl mx-auto mt-16 text-center flex flex-col justify-center">
         <h1 className="text-5xl font-bold text-gray-900 dark:text-white">
-          Hello, I'm Fayaz
+          Hello, I&apos;m Fayaz
         </h1>
         <p className="mt-4 text-gray-600 dark:text-gray-300">
-          I'm a full-stack developer specialized in building high-quality
+          I&apos;m a full-stack developer specialized in building high-quality
           websites and applications.
         </p>
         <div className="mt-8 space-x-2">
