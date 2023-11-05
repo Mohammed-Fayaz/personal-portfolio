@@ -82,9 +82,9 @@ export default function Component() {
               order to better serve our specific niche use-cases.
             </li>
             <li>
-              Working with the recon team to revamp the frontend (built out
-              using the <span className="font-bold">BFF pattern</span>) as part
-              of a re-write to shore up the recon product.
+              Worked with the recon team to revamp the frontend (built out using
+              the <span className="font-bold">BFF pattern</span>) as part of a
+              re-write to shore up the recon product.
             </li>
           </ul>
           <p className="mt-4 font-semibold">Skills Highlight:</p>

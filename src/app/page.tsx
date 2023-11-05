@@ -1,12 +1,9 @@
-"use client";
-
-// constants
 import Link from "next/link";
+
+// components
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const router = useRouter();
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-gray-800">
       <header className="w-full px-6 py-4 flex items-center justify-between">
@@ -32,10 +29,10 @@ export default function Home() {
             Contact Me
           </Button>
           <Button
+            asChild
             className="px-6 py-2 rounded-md bg-indigo-500 text-white hover:bg-indigo-600 dark:bg-indigo-300 dark:text-black dark:hover:bg-indigo-200"
-            onClick={() => router.push("/work")}
           >
-            See my work
+            <Link href="/work">See my work</Link>
           </Button>
         </div>
       </main>
