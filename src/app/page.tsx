@@ -86,10 +86,11 @@ export default function Home() {
         </p>
         <div className="mt-8 space-x-2">
           <Button
+            asChild
             className="px-6 py-2 rounded-md border border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-300 dark:hover:text-black"
             variant="outline"
           >
-            Contact Me
+            <Link href="mailto:fayazsalim@gmail.com">Contact Me</Link>
           </Button>
           <Button
             asChild
