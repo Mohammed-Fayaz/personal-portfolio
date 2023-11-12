@@ -120,20 +120,20 @@ export default function Component() {
             <li>
               Worked with the tally team to build out error correction in the
               frontend as part of the import flow (using{" "}
-              <span className="font-bold">ReactJS</span>)
+              <span className="font-bold">React.js</span>)
             </li>
             <li>
               Worked with the desktop team and built out features for the
-              desktop app (using <span className="font-bold">electronJS</span>
+              desktop app (using <span className="font-bold">Electron.js</span>{" "}
               and <span className="font-bold">puppeteer</span>).
             </li>
             <li>
               Worked with the reports team to build out the frontend for various
               reports used by enterprises (monolithic frontend using{" "}
-              <span className="font-bold">nextJS</span> and{" "}
+              <span className="font-bold">Next.js</span> and{" "}
               <span className="font-bold">graphQL</span>) and supporting issues
               raised with the reporting BE server (using{" "}
-              <span className="font-bold">nodeJS</span>).
+              <span className="font-bold">Node.js</span>).
             </li>
             <li>
               Worked with the MAX TAX team to build out the frontend from
