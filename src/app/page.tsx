@@ -13,7 +13,12 @@ export default function Home() {
           </span>
         </div>
         <div className="flex space-x-4">
-          <Link aria-label="GitHub" href="https://github.com/Mohammed-Fayaz">
+          <Link
+            aria-label="GitHub"
+            href="https://github.com/Mohammed-Fayaz"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <svg
               className=" w-6 h-6 text-gray-900 dark:text-white hover:text-indigo-500 dark:hover:text-indigo-300"
               fill="none"
