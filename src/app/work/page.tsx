@@ -1,3 +1,6 @@
+// components
+import Skills from "./Skills";
+
 export default function Component() {
   return (
     <div className="w-full min-h-screen p-6 md:p-12 bg-gray-100 dark:bg-gray-800">
@@ -22,45 +25,21 @@ export default function Component() {
               perform agentic actions
             </li>
           </ul>
-          <p className="mt-4 font-semibold">Skills Highlight:</p>
-          <ul className="grid grid-cols-2 gap-x-4 gap-y-2 mt-2">
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              Next.js
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              Supabase
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              React.js
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              PostgreSQL
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              TypeScript
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              Vite
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              Amazon S3
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              Puppeteer
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              Large Language Models (LLM)
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              Amazon SES
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              Chrome Extensions
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              React Server Components
-            </li>
-          </ul>
+          <Skills
+            skills={[
+              "Next.js",
+              "Supabase",
+              "PostgreSQL",
+              "TypeScript",
+              "Vite",
+              "Amazon S3",
+              "Puppeteer",
+              "Large Language Models (LLM)",
+              "Amazon SES",
+              "Chrome Extensions",
+              "React Server Components",
+            ]}
+          />
         </div>
         <div className="border-2 border-indigo-200 dark:border-indigo-700 rounded-lg p-4 shadow-lg bg-white dark:bg-gray-900">
           <h2 className="text-2xl font-semibold text-indigo-500 dark:text-indigo-300">
@@ -87,27 +66,16 @@ export default function Component() {
               re-write to shore up the recon product.
             </li>
           </ul>
-          <p className="mt-4 font-semibold">Skills Highlight:</p>
-          <ul className="grid grid-cols-2 gap-x-4 gap-y-2 mt-2">
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              React.js
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              TypeScript
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              Webpack
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              Module federation
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              Amazon S3
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              Amazon CloudFront
-            </li>
-          </ul>
+          <Skills
+            skills={[
+              "React.js",
+              "TypeScript",
+              "Webpack",
+              "Module federation",
+              "Amazon S3",
+              "Amazon CloudFront",
+            ]}
+          />
         </div>
         <div className="border-2 border-indigo-200 dark:border-indigo-700 rounded-lg p-4 shadow-lg bg-white dark:bg-gray-900">
           <h2 className="text-2xl font-semibold text-indigo-500 dark:text-indigo-300">
@@ -148,30 +116,17 @@ export default function Component() {
               <span className="font-bold">microfrontend</span>).
             </li>
           </ul>
-          <p className="mt-4 font-semibold">Skills Highlight:</p>
-          <ul className="grid grid-cols-2 gap-x-4 gap-y-2 mt-2">
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              Next.js
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              React.js
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              TypeScript
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              Jenkins
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              Jira
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              Electron.js
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              Node.js
-            </li>
-          </ul>
+          <Skills
+            skills={[
+              "Next.js",
+              "React.js",
+              "TypeScript",
+              "Jenkins",
+              "Jira",
+              "Electron.js",
+              "Node.js",
+            ]}
+          />
         </div>
         <div className="border-2 border-indigo-200 dark:border-indigo-700 rounded-lg p-4 shadow-lg bg-white dark:bg-gray-900">
           <h2 className="text-2xl font-semibold text-indigo-500 dark:text-indigo-300">
@@ -193,15 +148,7 @@ export default function Component() {
               dynamic table displayed on a webpage
             </li>
           </ul>
-          <p className="mt-4 font-semibold">Skills Highlight:</p>
-          <ul className="grid grid-cols-2 gap-x-4 gap-y-2 mt-2">
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              iText
-            </li>
-            <li className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded-md">
-              Java
-            </li>
-          </ul>
+          <Skills skills={["iText", "Java"]} />
         </div>
       </div>
     </div>
