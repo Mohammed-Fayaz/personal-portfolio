@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-white dark:bg-gray-800">
+    <div className="flex flex-col h-[100dvh] bg-white dark:bg-gray-800">
       <header className="w-full px-6 py-4 flex items-center justify-between">
         <div>
           <span className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -86,7 +86,7 @@ export default function Home() {
           Hello, I&apos;m Fayaz
         </h1>
         <p className="mt-4 text-gray-600 dark:text-gray-300">
-          I&apos;m a full-stack developer specialized in building high-quality
+          I&apos;m a software engineer specialized in building high-quality
           websites and applications.
         </p>
         <div className="mt-8 space-x-2">
