@@ -16,12 +16,15 @@ export default function Component() {
           <ul className="list-disc list-inside">
             <li>
               Building the web app using{" "}
-              <span className="font-bold">Next.js</span> (hosted on vercel) and{" "}
+              <span className="font-bold">Next.js</span> (hosted on{" "}
+              <span className="font-bold">vercel</span>) and{" "}
               <span className="font-bold">PostgreSQL</span> (hosted on{" "}
               <span className="font-bold">Supabase</span>)
             </li>
             <li>
-              Building a <span className="font-bold">chrome extension</span> to
+              Building a <span className="font-bold">chrome extension</span>{" "}
+              leveraging{" "}
+              <span className="font-bold">Large Language Models</span> to
               perform agentic actions
             </li>
           </ul>
