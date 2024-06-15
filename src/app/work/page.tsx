@@ -15,17 +15,44 @@ export default function Component() {
           <p className="text-zinc-500 dark:text-zinc-400">Aug 2023 - Present</p>
           <ul className="list-disc list-inside">
             <li>
-              Building the web app using{" "}
-              <span className="font-bold">Next.js</span> (hosted on{" "}
-              <span className="font-bold">vercel</span>) and{" "}
-              <span className="font-bold">PostgreSQL</span> (hosted on{" "}
-              <span className="font-bold">Supabase</span>)
+              Leading full-stack development efforts to build out the web app
+              from scratch; handling <span className="font-bold">features</span>
+              , <span className="font-bold">performance</span>,{" "}
+              <span className="font-bold">authentication</span> &{" "}
+              <span className="font-bold">security</span>
             </li>
             <li>
-              Building a <span className="font-bold">chrome extension</span>{" "}
-              leveraging{" "}
-              <span className="font-bold">Large Language Models</span> to
-              perform agentic actions
+              Handling <span className="font-bold">next.js</span> applications
+              hosted on diverse environments (
+              <span className="font-bold">vercel</span> and{" "}
+              <span className="font-bold">AWS Amplify</span>)
+            </li>{" "}
+            <li>
+              Maintaining{" "}
+              <span className="font-bold">postgreSQL databases</span> hosted on
+              supabase and AWS RDS (handling{" "}
+              <span className="font-bold">db indexing</span>,{" "}
+              <span className="font-bold">migrations</span>,{" "}
+              <span className="font-bold">triggers</span>,{" "}
+              <span className="font-bold">functions</span> &{" "}
+              <span className="font-bold">RLS Policies</span>).
+            </li>{" "}
+            <li>
+              Building out <span className="font-bold">chrome extensions</span>{" "}
+              augmented with <span className="font-bold">LLMs</span> to serve as
+              autonomous web agents.
+            </li>{" "}
+            <li>
+              {" "}
+              Working extensively with AWS offerings including{" "}
+              <span className="font-bold">Amplify</span>,{" "}
+              <span className="font-bold">SES</span>,
+              <span className="font-bold"> S3</span>,{" "}
+              <span className="font-bold">Cognito</span>,{" "}
+              <span className="font-bold">RDS</span>,{" "}
+              <span className="font-bold">EC2</span>,{" "}
+              <span className="font-bold">Route53</span> &{" "}
+              <span className="font-bold">Cloudwatch</span>
             </li>
           </ul>
           <Skills
@@ -38,9 +65,14 @@ export default function Component() {
               "Amazon S3",
               "Puppeteer",
               "Large Language Models (LLM)",
-              "Amazon SES",
               "Chrome Extensions",
               "React Server Components",
+              "React Query",
+              "Amazon SES",
+              "Amazon RDS",
+              "Amazon Route53",
+              "Amazon Cloudwatch",
+              "Amazon Cognito",
             ]}
           />
         </div>
