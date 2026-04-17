@@ -1,4 +1,4 @@
-import { ExperienceCardProps } from "@/components/molecules/experienceCard";
+import type { ExperienceCardProps } from "@/components/molecules/experienceCard";
 
 export const EXPERIENCES: Array<ExperienceCardProps> = [
   {
