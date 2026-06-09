@@ -1,6 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Dumbbell, ExternalLink, Mountain, Swords, Waves } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import {
+  Dumbbell,
+  ExternalLink,
+  Mountain,
+  Swords,
+  Trophy,
+  Waves,
+} from "lucide-react";
 
 const otherPursuits = [
   {
@@ -20,6 +28,80 @@ const otherPursuits = [
   },
 ] as const;
 
+type PursuitChartCardProps = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  profileHref: string;
+  profileLabel: string;
+  period: string;
+  stat: React.ReactNode;
+  imageSrc: string;
+  imageAlt: string;
+  imageWidth: number;
+  imageHeight: number;
+};
+
+function PursuitChartCard({
+  icon: Icon,
+  title,
+  description,
+  profileHref,
+  profileLabel,
+  period,
+  stat,
+  imageSrc,
+  imageAlt,
+  imageWidth,
+  imageHeight,
+}: PursuitChartCardProps) {
+  return (
+    <div className="overflow-hidden rounded-xl border border-border/50 bg-background/70">
+      <div className="flex flex-col gap-6 p-5 md:flex-row md:items-start md:p-6">
+        <div className="flex gap-4 md:max-w-xs md:shrink-0">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+            <Icon className="h-5 w-5" />
+          </div>
+          <div>
+            <h3 className="font-medium text-foreground">{title}</h3>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+              {description}
+            </p>
+            <Link
+              className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+              href={profileHref}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {profileLabel}
+              <ExternalLink className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+        </div>
+
+        <div className="min-w-0 flex-1">
+          <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
+            <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
+              {period}
+            </p>
+            <p className="text-sm text-muted-foreground">{stat}</p>
+          </div>
+          <div className="overflow-hidden rounded-lg border border-border/60 bg-muted/30">
+            <Image
+              alt={imageAlt}
+              className="h-auto w-full"
+              height={imageHeight}
+              src={imageSrc}
+              unoptimized
+              width={imageWidth}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function PersonalPursuits() {
   return (
     <section className="rounded-2xl border border-border/70 bg-card/60 p-6 md:p-8">
@@ -36,54 +118,47 @@ export function PersonalPursuits() {
         </p>
       </div>
 
-      <div className="mb-4 overflow-hidden rounded-xl border border-border/50 bg-background/70">
-        <div className="flex flex-col gap-6 p-5 md:flex-row md:items-start md:p-6">
-          <div className="flex gap-4 md:max-w-xs md:shrink-0">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-              <Swords className="h-5 w-5" />
-            </div>
-            <div>
-              <h3 className="font-medium text-foreground">Bullet chess</h3>
-              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                Took it seriously for three months during the pandemic (Mar–Jun
-                2021) — reached a level where I could beat a Candidate Master.
-              </p>
-              <Link
-                className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
-                href="https://lichess.org/@/Fayaz007"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Fayaz007 on Lichess
-                <ExternalLink className="h-3.5 w-3.5" />
-              </Link>
-            </div>
-          </div>
-
-          <div className="min-w-0 flex-1">
-            <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
-              <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
-                Mar 2021 – Jun 2021 · three months
-              </p>
-              <p className="text-sm text-muted-foreground">
-                <span className="font-medium text-foreground">~1680</span>
-                {" → "}
-                <span className="font-medium text-foreground">~1940</span>
-                {" peak"}
-              </p>
-            </div>
-            <div className="overflow-hidden rounded-lg border border-border/60 bg-muted/30">
-              <Image
-                alt="Lichess bullet rating progression for Fayaz007 from March to June 2021, climbing from roughly 1680 to a peak near 1940"
-                className="h-auto w-full"
-                height={458}
-                src="/images/lichess-bullet-progression.png"
-                unoptimized
-                width={1024}
-              />
-            </div>
-          </div>
-        </div>
+      <div className="mb-4 space-y-4">
+        <PursuitChartCard
+          description="Best competitive programmer in my graduating year; represented the university at ICPC regionals in the 2018–19 season."
+          icon={Trophy}
+          imageAlt="CodeChef rating progression from late 2016 to late 2018, climbing from roughly 1200 to a peak near 2100"
+          imageHeight={599}
+          imageSrc="/images/codechef-rating-progression.png"
+          imageWidth={1024}
+          period="2017 – 2018 · CodeChef"
+          profileHref="https://www.codechef.com/users/fayaz_007"
+          profileLabel="fayaz_007 on CodeChef (5★)"
+          stat={
+            <>
+              <span className="font-medium text-foreground">~1200</span>
+              {" → "}
+              <span className="font-medium text-foreground">2076</span>
+              {" peak (5★)"}
+            </>
+          }
+          title="Competitive programming"
+        />
+        <PursuitChartCard
+          description="Took it seriously for three months during the pandemic — reached a level where I could beat a Candidate Master."
+          icon={Swords}
+          imageAlt="Lichess bullet rating progression for Fayaz007 from March to June 2021, climbing from roughly 1680 to a peak near 1940"
+          imageHeight={458}
+          imageSrc="/images/lichess-bullet-progression.png"
+          imageWidth={1024}
+          period="Mar 2021 – Jun 2021 · three months"
+          profileHref="https://lichess.org/@/Fayaz007"
+          profileLabel="Fayaz007 on Lichess"
+          stat={
+            <>
+              <span className="font-medium text-foreground">~1680</span>
+              {" → "}
+              <span className="font-medium text-foreground">~1940</span>
+              {" peak"}
+            </>
+          }
+          title="Bullet chess"
+        />
       </div>
 
       <div className="grid gap-4 sm:grid-cols-3">

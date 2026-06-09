@@ -8,7 +8,6 @@ import {
 } from "lucide-react";
 
 import { TimelineEntry } from "@/components/molecules/timeline-entry";
-import { ProofChart } from "@/components/proof-chart";
 
 export function AboutTimeline() {
   return (
@@ -68,16 +67,6 @@ export function AboutTimeline() {
             produced a single top scorer in the program&apos;s history.
           </li>
         </ul>
-        <ProofChart
-          href="https://www.codechef.com/users/fayaz_007"
-          imageAlt="CodeChef rating progression from late 2016 to late 2018, climbing from roughly 1200 to a peak near 2100"
-          imageHeight={599}
-          imageSrc="/images/codechef-rating-progression.png"
-          imageWidth={1024}
-          linkLabel="fayaz_007 on CodeChef (5★)"
-          period="2017 – 2018 · CodeChef rating progression"
-          stat="~1200 → 2076 peak (5★)"
-        />
       </TimelineEntry>
 
       <TimelineEntry
