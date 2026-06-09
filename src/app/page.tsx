@@ -85,11 +85,12 @@ export default function Home() {
         <h1 className="text-5xl font-bold text-gray-900 dark:text-white">
           Hello, I&apos;m Fayaz
         </h1>
-        <p className="mt-4 text-gray-600 dark:text-gray-300">
-          I&apos;m a software engineer specialized in building high-quality
-          websites and applications.
+        <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          Founding engineer building LLM-powered products. Background in
+          machine learning, competitive programming, and full-stack engineering
+          across Goldman Sachs, Cleartax, and early-stage startups.
         </p>
-        <div className="mt-8 space-x-2">
+        <div className="mt-8 flex flex-wrap justify-center gap-2">
           <Button
             asChild
             className="px-6 py-2 rounded-md border border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-300 dark:hover:text-black"
@@ -101,13 +102,20 @@ export default function Home() {
             asChild
             className="px-6 py-2 rounded-md bg-indigo-500 text-white hover:bg-indigo-600 dark:bg-indigo-300 dark:text-black dark:hover:bg-indigo-200"
           >
+            <Link href="/about">About me</Link>
+          </Button>
+          <Button
+            asChild
+            className="px-6 py-2 rounded-md border border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-300 dark:hover:text-black"
+            variant="outline"
+          >
             <Link href="/work">See my work</Link>
           </Button>
         </div>
       </main>
       <footer className="w-full h-20 flex items-center justify-center border-t border-gray-200 dark:border-gray-700">
         <p className="text-gray-500 dark:text-gray-300">
-          © 2023 Mohammed Fayaz Salim. All rights reserved.
+          © 2026 Mohammed Fayaz Salim. All rights reserved.
         </p>
       </footer>
     </div>

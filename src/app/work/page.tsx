@@ -1,12 +1,26 @@
+import Link from "next/link";
+
+import { Button } from "@/components/ui/button";
+
 // components
 import Skills from "./Skills";
 
 export default function Component() {
   return (
     <div className="w-full min-h-screen p-6 md:p-12 bg-gray-100 dark:bg-gray-800">
-      <h1 className="text-4xl font-bold mb-8 text-indigo-600 dark:text-indigo-400">
-        Work Experience
-      </h1>
+      <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+        <h1 className="text-4xl font-bold text-indigo-600 dark:text-indigo-400">
+          Work Experience
+        </h1>
+        <div className="flex gap-2">
+          <Button asChild variant="outline" size="sm">
+            <Link href="/">Home</Link>
+          </Button>
+          <Button asChild variant="outline" size="sm">
+            <Link href="/about">About me</Link>
+          </Button>
+        </div>
+      </div>
       <div className="space-y-8">
         <div className="border-2 border-indigo-200 dark:border-indigo-700 rounded-lg p-4 shadow-lg bg-white dark:bg-gray-900">
           <h2 className="text-2xl font-semibold text-indigo-500 dark:text-indigo-300">
