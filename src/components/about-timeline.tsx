@@ -1,10 +1,20 @@
+import {
+  Brain,
+  Briefcase,
+  Building2,
+  Rocket,
+  School,
+  Trophy,
+} from "lucide-react";
+
 import { TimelineEntry } from "@/components/molecules/timeline-entry";
+import { ProofChart } from "@/components/proof-chart";
 
 export function AboutTimeline() {
   return (
-    <div className="space-y-0">
-      <TimelineEntry period="High School" title="Academic & Extracurricular">
-        <ul className="list-disc list-inside space-y-2">
+    <div>
+      <TimelineEntry icon={School} period="High School" title="Academic & Extracurricular">
+        <ul className="list-none space-y-2">
           <li>
             Member of the school quizzing team and athletics team (100m, 200m,
             and 4×100m relay).
@@ -17,14 +27,15 @@ export function AboutTimeline() {
       </TimelineEntry>
 
       <TimelineEntry
+        icon={Brain}
         period="University"
-        title="Machine Learning Capstone"
         subtitle="CNN-based cervical cancer detection"
+        title="Machine Learning Capstone"
       >
-        <ul className="list-disc list-inside space-y-2">
+        <ul className="list-none space-y-2">
           <li>
-            University project: applied convolutional neural networks to detect
-            cervical cancer from pap smear images.
+            Applied convolutional neural networks to detect cervical cancer from
+            pap smear images.
           </li>
           <li>
             Built a working understanding of ML architectures that I still draw
@@ -34,16 +45,18 @@ export function AboutTimeline() {
       </TimelineEntry>
 
       <TimelineEntry
+        icon={Trophy}
         period="University"
         title="Competitive Programming & Academics"
       >
-        <ul className="list-disc list-inside space-y-2">
+        <ul className="list-none space-y-2">
           <li>
-            Became the best competitive programmer in my graduating year;
-            represented the university at ICPC regionals in the 2018–19 season.
+            Best competitive programmer in my graduating year; represented the
+            university at ICPC regionals in the 2018–19 season.
           </li>
           <li>
-            Took graduate-level mathematics courses during undergraduate studies.
+            Took graduate-level mathematics courses during undergraduate
+            studies.
           </li>
           <li>
             Sole recipient of the top grade in a notoriously difficult Data
@@ -51,31 +64,39 @@ export function AboutTimeline() {
             produced a single top scorer in the program&apos;s history.
           </li>
         </ul>
+        <ProofChart
+          imageAlt="CodeChef rating progression from late 2016 to late 2018, climbing from roughly 1200 to a peak near 2100"
+          imageSrc="/images/codechef-progression.png"
+          period="2017 – 2018 · CodeChef rating progression"
+          stat="~1200 → ~2100 by end of 2018"
+        />
       </TimelineEntry>
 
       <TimelineEntry
+        icon={Building2}
         period="May – Jul 2019"
-        title="Summer Analyst"
         subtitle="Goldman Sachs"
+        title="Summer Analyst"
       >
-        <ul className="list-disc list-inside space-y-2">
+        <ul className="list-none space-y-2">
           <li>
             Contributed to the MOSAIC platform on the Goldman Sachs Liquidity
             Solutions Portal.
           </li>
           <li>
-            Implemented backend functionality to generate PDFs from dynamic
-            tables displayed on a webpage.
+            Implemented backend functionality to generate PDFs from dynamic tables
+            displayed on a webpage.
           </li>
         </ul>
       </TimelineEntry>
 
       <TimelineEntry
+        icon={Briefcase}
         period="Aug 2020 – Aug 2023"
+        subtitle="Cleartax · late-stage startup"
         title="Software Engineer I → II"
-        subtitle="Cleartax (late-stage startup)"
       >
-        <ul className="list-disc list-inside space-y-2">
+        <ul className="list-none space-y-2">
           <li>
             Three years across multiple product teams — tally, desktop, reports,
             MAX TAX, forms, and recon.
@@ -92,11 +113,13 @@ export function AboutTimeline() {
       </TimelineEntry>
 
       <TimelineEntry
+        icon={Rocket}
+        isLast
         period="Aug 2023 – Present"
+        subtitle="Snowmountain.ai · first engineering hire"
         title="Founding Engineer"
-        subtitle="Snowmountain.ai (first engineering hire)"
       >
-        <ul className="list-disc list-inside space-y-2">
+        <ul className="list-none space-y-2">
           <li>
             First engineering hire at an early-stage startup building products
             enabled by advances in LLMs.
@@ -109,20 +132,6 @@ export function AboutTimeline() {
             Built a Chrome extension capable of agentic web actions: filling
             forms, clicking buttons, and navigating pages autonomously.
           </li>
-        </ul>
-      </TimelineEntry>
-
-      <TimelineEntry period="Along the way" title="Personal pursuits" isLast>
-        <ul className="list-disc list-inside space-y-2">
-          <li>
-            Took bullet chess seriously during the pandemic — reached a level
-            where I could beat a Candidate Master.
-          </li>
-          <li>
-            Six-month focused body recomposition, dieting down to roughly 10%
-            body fat.
-          </li>
-          <li>Open water scuba certification and indoor rock climbing.</li>
         </ul>
       </TimelineEntry>
     </div>
