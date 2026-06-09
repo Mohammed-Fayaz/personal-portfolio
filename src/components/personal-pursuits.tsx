@@ -76,9 +76,10 @@ export function PersonalPursuits() {
               <Image
                 alt="Lichess bullet rating progression for Fayaz007 from March to June 2021, climbing from roughly 1680 to a peak near 1940"
                 className="h-auto w-full"
-                height={400}
+                height={458}
                 src="/images/lichess-bullet-progression.png"
-                width={800}
+                unoptimized
+                width={1024}
               />
             </div>
           </div>

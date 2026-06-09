@@ -13,7 +13,11 @@ import { ProofChart } from "@/components/proof-chart";
 export function AboutTimeline() {
   return (
     <div>
-      <TimelineEntry icon={School} period="High School" title="Academic & Extracurricular">
+      <TimelineEntry
+        icon={School}
+        period="High School"
+        title="Academic & Extracurricular"
+      >
         <ul className="list-none space-y-2">
           <li>
             Member of the school quizzing team and athletics team (100m, 200m,
@@ -65,10 +69,14 @@ export function AboutTimeline() {
           </li>
         </ul>
         <ProofChart
+          href="https://www.codechef.com/users/fayaz_007"
           imageAlt="CodeChef rating progression from late 2016 to late 2018, climbing from roughly 1200 to a peak near 2100"
-          imageSrc="/images/codechef-progression.png"
+          imageHeight={599}
+          imageSrc="/images/codechef-rating-progression.png"
+          imageWidth={1024}
+          linkLabel="fayaz_007 on CodeChef (5★)"
           period="2017 – 2018 · CodeChef rating progression"
-          stat="~1200 → ~2100 by end of 2018"
+          stat="~1200 → 2076 peak (5★)"
         />
       </TimelineEntry>
 
@@ -84,8 +92,8 @@ export function AboutTimeline() {
             Solutions Portal.
           </li>
           <li>
-            Implemented backend functionality to generate PDFs from dynamic tables
-            displayed on a webpage.
+            Implemented backend functionality to generate PDFs from dynamic
+            tables displayed on a webpage.
           </li>
         </ul>
       </TimelineEntry>
@@ -106,8 +114,8 @@ export function AboutTimeline() {
             spanning 30+ enterprise reports as microfrontends.
           </li>
           <li>
-            Designed and implemented a custom data table to replace off-the-shelf
-            solutions for niche enterprise use cases.
+            Designed and implemented a custom data table to replace
+            off-the-shelf solutions for niche enterprise use cases.
           </li>
         </ul>
       </TimelineEntry>

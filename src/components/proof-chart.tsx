@@ -7,6 +7,8 @@ type ProofChartProps = {
   stat?: string;
   imageSrc: string;
   imageAlt: string;
+  imageWidth: number;
+  imageHeight: number;
   href?: string;
   linkLabel?: string;
 };
@@ -16,6 +18,8 @@ export function ProofChart({
   stat,
   imageSrc,
   imageAlt,
+  imageWidth,
+  imageHeight,
   href,
   linkLabel,
 }: ProofChartProps) {
@@ -30,9 +34,10 @@ export function ProofChart({
       <Image
         alt={imageAlt}
         className="h-auto w-full"
-        height={400}
+        height={imageHeight}
         src={imageSrc}
-        width={800}
+        unoptimized
+        width={imageWidth}
       />
       {href && linkLabel && (
         <div className="border-t border-border/60 px-4 py-3">
