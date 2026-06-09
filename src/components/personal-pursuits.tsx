@@ -10,6 +10,11 @@ import {
   Waves,
 } from "lucide-react";
 
+import {
+  ChartSlideshow,
+  type ChartImage,
+} from "@/components/chart-slideshow";
+
 const otherPursuits = [
   {
     icon: Waves,
@@ -23,14 +28,6 @@ const otherPursuits = [
   },
 ] as const;
 
-type ChartImage = {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  caption: string;
-};
-
 type PursuitChartCardProps = {
   icon: LucideIcon;
   title: string;
@@ -40,7 +37,37 @@ type PursuitChartCardProps = {
   images: ChartImage[];
   profileHref?: string;
   profileLabel?: string;
+  slideshow?: boolean;
+  disclaimer?: string;
 };
+
+function ChartImages({ images }: { images: ChartImage[] }) {
+  const showCaptions = images.length > 1;
+
+  return (
+    <div className="space-y-4">
+      {images.map(({ src, alt, width, height, caption }) => (
+        <div key={src}>
+          {showCaptions && (
+            <p className="mb-2 text-xs font-medium text-muted-foreground">
+              {caption}
+            </p>
+          )}
+          <div className="overflow-hidden rounded-lg border border-border/60 bg-muted/30">
+            <Image
+              alt={alt}
+              className="h-auto w-full"
+              height={height}
+              src={src}
+              unoptimized
+              width={width}
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 function PursuitChartCard({
   icon: Icon,
@@ -51,6 +78,8 @@ function PursuitChartCard({
   images,
   profileHref,
   profileLabel,
+  slideshow = false,
+  disclaimer,
 }: PursuitChartCardProps) {
   return (
     <div className="overflow-hidden rounded-xl border border-border/50 bg-background/70">
@@ -64,6 +93,11 @@ function PursuitChartCard({
             <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
               {description}
             </p>
+            {disclaimer && (
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground/80">
+                {disclaimer}
+              </p>
+            )}
             {profileHref && profileLabel && (
               <Link
                 className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
@@ -85,25 +119,11 @@ function PursuitChartCard({
             </p>
             <p className="text-sm text-muted-foreground">{stat}</p>
           </div>
-          <div className="space-y-4">
-            {images.map(({ src, alt, width, height, caption }) => (
-              <div key={src}>
-                <p className="mb-2 text-xs font-medium text-muted-foreground">
-                  {caption}
-                </p>
-                <div className="overflow-hidden rounded-lg border border-border/60 bg-muted/30">
-                  <Image
-                    alt={alt}
-                    className="h-auto w-full"
-                    height={height}
-                    src={src}
-                    unoptimized
-                    width={width}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
+          {slideshow ? (
+            <ChartSlideshow images={images} />
+          ) : (
+            <ChartImages images={images} />
+          )}
         </div>
       </div>
     </div>
@@ -179,6 +199,8 @@ export function PersonalPursuits() {
         />
         <PursuitChartCard
           description="Six-month focused cut — tracked weight and body fat weekly."
+          disclaimer="Body fat readings are from bioimpedance on a weighing scale — I suspect actual body fat was closer to ~10% based on how I looked."
+          slideshow
           icon={Dumbbell}
           images={[
             {
@@ -194,6 +216,14 @@ export function PersonalPursuits() {
               height: 320,
               src: "/images/body-recomp-bodyfat.png",
               width: 472,
+            },
+            {
+              alt: "Progress photo from body recomposition, August 2023",
+              blurred: true,
+              caption: "Progress photo",
+              height: 300,
+              src: "/images/body-recomp-progress.png",
+              width: 280,
             },
           ]}
           period="Mar 2023 – Aug 2023 · six months"
