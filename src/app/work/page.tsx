@@ -12,14 +12,9 @@ export default function Component() {
         <h1 className="text-4xl font-bold text-indigo-600 dark:text-indigo-400">
           Work Experience
         </h1>
-        <div className="flex gap-2">
-          <Button asChild variant="outline" size="sm">
-            <Link href="/">Home</Link>
-          </Button>
-          <Button asChild variant="outline" size="sm">
-            <Link href="/about">About me</Link>
-          </Button>
-        </div>
+        <Button asChild variant="outline" size="sm">
+          <Link href="/">Home</Link>
+        </Button>
       </div>
       <div className="space-y-8">
         <div className="border-2 border-indigo-200 dark:border-indigo-700 rounded-lg p-4 shadow-lg bg-white dark:bg-gray-900">
