@@ -1,123 +1,59 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
-// components
+import { AboutTimeline } from "@/components/about-timeline";
+import { PersonalPursuits } from "@/components/personal-pursuits";
+import { SectionHeading } from "@/components/section-heading";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="flex flex-col h-[100dvh] bg-white dark:bg-gray-800">
-      <header className="w-full px-6 py-4 flex items-center justify-between">
-        <div>
-          <span className="text-lg font-semibold text-gray-900 dark:text-white">
-            Mohammed Fayaz Salim
-          </span>
-        </div>
-        <div className="flex space-x-4">
-          <Link
-            aria-label="GitHub"
-            href="https://github.com/Mohammed-Fayaz"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <svg
-              className=" w-6 h-6 text-gray-900 dark:text-white hover:text-indigo-500 dark:hover:text-indigo-300"
-              fill="none"
-              height="24"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-              <path d="M9 18c-4.51 2-5-2-7-2" />
-            </svg>
-          </Link>
-          <Link
-            aria-label="LinkedIn"
-            href="https://www.linkedin.com/in/mohammedfayazsalim/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <svg
-              className=" w-6 h-6 text-gray-900 dark:text-white hover:text-indigo-500 dark:hover:text-indigo-300"
-              fill="none"
-              height="24"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-              <rect height="12" width="4" x="2" y="9" />
-              <circle cx="4" cy="4" r="2" />
-            </svg>
-          </Link>
-          <Link
-            aria-label="Twitter"
-            href="https://twitter.com/FayazsalimMoha"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <svg
-              className=" w-6 h-6 text-gray-900 dark:text-white hover:text-indigo-500 dark:hover:text-indigo-300"
-              fill="none"
-              height="24"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-            </svg>
-          </Link>
-        </div>
-      </header>
-      <main className="flex-1 w-full max-w-4xl mx-auto mt-16 text-center flex flex-col justify-center">
-        <h1 className="text-5xl font-bold text-gray-900 dark:text-white">
-          Hello, I&apos;m Fayaz
-        </h1>
-        <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
-          Founding engineer building LLM-powered products. Background in
-          machine learning, competitive programming, and full-stack engineering
-          across Goldman Sachs, Cleartax, and early-stage startups.
-        </p>
-        <div className="mt-8 flex flex-wrap justify-center gap-2">
-          <Button
-            asChild
-            className="px-6 py-2 rounded-md border border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-300 dark:hover:text-black"
-            variant="outline"
-          >
-            <Link href="mailto:fayazsalim@gmail.com">Contact Me</Link>
-          </Button>
-          <Button
-            asChild
-            className="px-6 py-2 rounded-md bg-indigo-500 text-white hover:bg-indigo-600 dark:bg-indigo-300 dark:text-black dark:hover:bg-indigo-200"
-          >
-            <Link href="/about">About me</Link>
-          </Button>
-          <Button
-            asChild
-            className="px-6 py-2 rounded-md border border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-300 dark:hover:text-black"
-            variant="outline"
-          >
-            <Link href="/work">See my work</Link>
-          </Button>
-        </div>
+    <div className="flex min-h-dvh flex-col">
+      <div className="page-gradient pointer-events-none fixed inset-0 -z-10" />
+      <SiteHeader activePath="/" />
+
+      <main className="flex-1">
+        <section className="mx-auto max-w-5xl px-6 pb-16 pt-14 md:px-10 md:pb-24 md:pt-20">
+          <div className="max-w-3xl">
+            <h1 className="font-serif text-5xl font-semibold tracking-tight text-foreground md:text-6xl lg:text-7xl">
+              Hello, I&apos;m Fayaz.
+            </h1>
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground md:text-xl">
+              I built this site to chronicle my achievements in life (both for
+              myself and others) — academic, professional, and personal — in
+              order, with proof where I have it.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button asChild size="lg">
+                <Link href="mailto:fayazsalim@gmail.com">Contact me</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <Link className="gap-2" href="/work">
+                  For a more traditional resume
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-5xl px-6 pb-16 md:px-10 md:pb-24">
+          <SectionHeading
+            description="Education, competition wins, and the roles that shaped how I build."
+            eyebrow="Timeline"
+            title="The arc, in order"
+          />
+          <AboutTimeline />
+        </section>
+
+        <section className="mx-auto max-w-5xl px-6 pb-20 md:px-10 md:pb-28">
+          <PersonalPursuits />
+        </section>
       </main>
-      <footer className="w-full h-20 flex items-center justify-center border-t border-gray-200 dark:border-gray-700">
-        <p className="text-gray-500 dark:text-gray-300">
-          © 2026 Mohammed Fayaz Salim. All rights reserved.
-        </p>
-      </footer>
+
+      <SiteFooter />
     </div>
   );
 }

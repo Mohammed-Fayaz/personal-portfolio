@@ -1,7 +1,10 @@
+import type { LucideIcon } from "lucide-react";
+
 type TimelineEntryProps = {
   period: string;
   title: string;
   subtitle?: string;
+  icon: LucideIcon;
   children: React.ReactNode;
   isLast?: boolean;
 };
@@ -10,31 +13,36 @@ export function TimelineEntry({
   period,
   title,
   subtitle,
+  icon: Icon,
   children,
   isLast = false,
 }: TimelineEntryProps) {
   return (
-    <div className="relative flex gap-6 md:gap-8">
+    <div className="relative flex gap-5 md:gap-6">
       <div className="flex flex-col items-center">
-        <div className="h-3 w-3 rounded-full bg-indigo-500 dark:bg-indigo-400 shrink-0 mt-2" />
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-background shadow-sm">
+          <Icon className="h-4 w-4 text-primary" />
+        </div>
         {!isLast && (
-          <div className="w-px flex-1 bg-indigo-200 dark:bg-indigo-700 mt-2" />
+          <div className="mt-2 w-px flex-1 bg-gradient-to-b from-border to-transparent" />
         )}
       </div>
-      <div
-        className={`flex-1 pb-10 ${isLast ? "pb-0" : ""} border-2 border-indigo-200 dark:border-indigo-700 rounded-lg p-4 md:p-6 shadow-lg bg-white dark:bg-gray-900 -mt-1`}
+      <article
+        className={`flex-1 ${isLast ? "pb-0" : "pb-10"} rounded-2xl border border-border/70 bg-card/80 p-5 shadow-sm transition-shadow hover:shadow-md md:p-6`}
       >
-        <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400">
+        <span className="inline-flex rounded-full border border-border bg-muted/60 px-3 py-1 text-xs font-medium text-muted-foreground">
           {period}
-        </p>
-        <h2 className="text-xl md:text-2xl font-semibold text-indigo-500 dark:text-indigo-300 mt-1">
+        </span>
+        <h3 className="mt-3 text-xl font-semibold tracking-tight text-foreground md:text-2xl">
           {title}
-        </h2>
+        </h3>
         {subtitle && (
-          <p className="text-zinc-500 dark:text-zinc-400 mt-1">{subtitle}</p>
+          <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>
         )}
-        <div className="mt-4 text-gray-700 dark:text-gray-300">{children}</div>
-      </div>
+        <div className="mt-4 space-y-2 text-sm leading-relaxed text-muted-foreground md:text-base">
+          {children}
+        </div>
+      </article>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
@@ -7,11 +7,16 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  variable: "--font-serif",
+});
 
 export const metadata: Metadata = {
   title: "Mohammed Fayaz Salim's Personal Website",
-  description: "Mohammed Fayaz Salim's Personal Website",
+  description:
+    "A chronicle of Mohammed Fayaz Salim's achievements in life — academic, professional, and personal.",
 };
 
 export default function RootLayout({
@@ -31,7 +36,7 @@ export default function RootLayout({
     })(window, document, "clarity", "script", "jqda25n3o4");
 `}</Script>
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${sourceSerif.variable} font-sans`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
