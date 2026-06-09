@@ -15,7 +15,8 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   title: "Mohammed Fayaz Salim's Personal Website",
-  description: "Mohammed Fayaz Salim's Personal Website",
+  description:
+    "A chronicle of Mohammed Fayaz Salim's achievements in life — academic, professional, and personal.",
 };
 
 export default function RootLayout({

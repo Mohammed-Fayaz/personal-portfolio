@@ -10,10 +10,7 @@ import {
   Waves,
 } from "lucide-react";
 
-import {
-  ChartSlideshow,
-  type ChartImage,
-} from "@/components/chart-slideshow";
+import { ChartSlideshow, type ChartImage } from "@/components/chart-slideshow";
 
 const otherPursuits = [
   {
@@ -141,8 +138,10 @@ export function PersonalPursuits() {
           Things I do for fun
         </h2>
         <p className="mt-2 max-w-2xl text-muted-foreground">
-          I tend to go deep on hobbies the same way I go deep on engineering —
-          a few interests outside the job.
+          I tend to go deep on hobbies the same way I go deep on engineering — a
+          few interests outside the job. I usually rotate through hobbies every
+          few months. I like optimizing things and getting the most out of them
+          - including hobbies.
         </p>
       </div>
 
