@@ -12,11 +12,6 @@ import {
 
 const otherPursuits = [
   {
-    icon: Dumbbell,
-    title: "Body recomposition",
-    description: "Six-month focused cut down to roughly 10% body fat.",
-  },
-  {
     icon: Waves,
     title: "Open water scuba",
     description: "Certified and comfortable in open water.",
@@ -28,32 +23,34 @@ const otherPursuits = [
   },
 ] as const;
 
+type ChartImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption: string;
+};
+
 type PursuitChartCardProps = {
   icon: LucideIcon;
   title: string;
   description: string;
-  profileHref: string;
-  profileLabel: string;
   period: string;
   stat: React.ReactNode;
-  imageSrc: string;
-  imageAlt: string;
-  imageWidth: number;
-  imageHeight: number;
+  images: ChartImage[];
+  profileHref?: string;
+  profileLabel?: string;
 };
 
 function PursuitChartCard({
   icon: Icon,
   title,
   description,
-  profileHref,
-  profileLabel,
   period,
   stat,
-  imageSrc,
-  imageAlt,
-  imageWidth,
-  imageHeight,
+  images,
+  profileHref,
+  profileLabel,
 }: PursuitChartCardProps) {
   return (
     <div className="overflow-hidden rounded-xl border border-border/50 bg-background/70">
@@ -67,15 +64,17 @@ function PursuitChartCard({
             <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
               {description}
             </p>
-            <Link
-              className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
-              href={profileHref}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              {profileLabel}
-              <ExternalLink className="h-3.5 w-3.5" />
-            </Link>
+            {profileHref && profileLabel && (
+              <Link
+                className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+                href={profileHref}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {profileLabel}
+                <ExternalLink className="h-3.5 w-3.5" />
+              </Link>
+            )}
           </div>
         </div>
 
@@ -86,15 +85,24 @@ function PursuitChartCard({
             </p>
             <p className="text-sm text-muted-foreground">{stat}</p>
           </div>
-          <div className="overflow-hidden rounded-lg border border-border/60 bg-muted/30">
-            <Image
-              alt={imageAlt}
-              className="h-auto w-full"
-              height={imageHeight}
-              src={imageSrc}
-              unoptimized
-              width={imageWidth}
-            />
+          <div className="space-y-4">
+            {images.map(({ src, alt, width, height, caption }) => (
+              <div key={src}>
+                <p className="mb-2 text-xs font-medium text-muted-foreground">
+                  {caption}
+                </p>
+                <div className="overflow-hidden rounded-lg border border-border/60 bg-muted/30">
+                  <Image
+                    alt={alt}
+                    className="h-auto w-full"
+                    height={height}
+                    src={src}
+                    unoptimized
+                    width={width}
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -122,10 +130,15 @@ export function PersonalPursuits() {
         <PursuitChartCard
           description="Best competitive programmer in my graduating year; represented the university at ICPC regionals in the 2018–19 season."
           icon={Trophy}
-          imageAlt="CodeChef rating progression from late 2016 to late 2018, climbing from roughly 1200 to a peak near 2100"
-          imageHeight={599}
-          imageSrc="/images/codechef-rating-progression.png"
-          imageWidth={1024}
+          images={[
+            {
+              alt: "CodeChef rating progression from late 2016 to late 2018, climbing from roughly 1200 to a peak near 2100",
+              caption: "CodeChef rating",
+              height: 599,
+              src: "/images/codechef-rating-progression.png",
+              width: 1024,
+            },
+          ]}
           period="2017 – 2018 · CodeChef"
           profileHref="https://www.codechef.com/users/fayaz_007"
           profileLabel="fayaz_007 on CodeChef (5★)"
@@ -142,10 +155,15 @@ export function PersonalPursuits() {
         <PursuitChartCard
           description="Took it seriously for three months during the pandemic — reached a level where I could beat a Candidate Master."
           icon={Swords}
-          imageAlt="Lichess bullet rating progression for Fayaz007 from March to June 2021, climbing from roughly 1680 to a peak near 1940"
-          imageHeight={458}
-          imageSrc="/images/lichess-bullet-progression.png"
-          imageWidth={1024}
+          images={[
+            {
+              alt: "Lichess bullet rating progression for Fayaz007 from March to June 2021, climbing from roughly 1680 to a peak near 1940",
+              caption: "Bullet rating",
+              height: 458,
+              src: "/images/lichess-bullet-progression.png",
+              width: 1024,
+            },
+          ]}
           period="Mar 2021 – Jun 2021 · three months"
           profileHref="https://lichess.org/@/Fayaz007"
           profileLabel="Fayaz007 on Lichess"
@@ -159,9 +177,38 @@ export function PersonalPursuits() {
           }
           title="Bullet chess"
         />
+        <PursuitChartCard
+          description="Six-month focused cut — tracked weight and body fat weekly."
+          icon={Dumbbell}
+          images={[
+            {
+              alt: "Weight progression from March to August 2023, declining from 73 kg to 63 kg",
+              caption: "Weight (kg)",
+              height: 300,
+              src: "/images/body-recomp-weight.png",
+              width: 472,
+            },
+            {
+              alt: "Body fat percentage progression from March to August 2023, declining from 22% to 18%",
+              caption: "Body fat (%)",
+              height: 320,
+              src: "/images/body-recomp-bodyfat.png",
+              width: 472,
+            },
+          ]}
+          period="Mar 2023 – Aug 2023 · six months"
+          stat={
+            <>
+              <span className="font-medium text-foreground">73 → 63 kg</span>
+              {" · "}
+              <span className="font-medium text-foreground">22 → 18% bf</span>
+            </>
+          }
+          title="Body recomposition"
+        />
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2">
         {otherPursuits.map(({ icon: Icon, title, description }) => (
           <div
             key={title}
