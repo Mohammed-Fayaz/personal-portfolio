@@ -10,9 +10,19 @@ type WorkRoleProps = {
   period: string;
   children: React.ReactNode;
   skills: string[];
+  introduction?: string;
+  projects?: React.ReactNode;
 };
 
-function WorkRole({ company, title, period, children, skills }: WorkRoleProps) {
+function WorkRole({
+  company,
+  title,
+  period,
+  children,
+  skills,
+  introduction,
+  projects,
+}: WorkRoleProps) {
   return (
     <article className="rounded-2xl border border-border/70 bg-card/80 p-6 shadow-sm transition-shadow hover:shadow-md md:p-8">
       <span className="inline-flex rounded-full border border-border bg-muted/60 px-3 py-1 text-xs font-medium text-muted-foreground">
@@ -22,9 +32,15 @@ function WorkRole({ company, title, period, children, skills }: WorkRoleProps) {
         {title}
       </h2>
       <p className="mt-1 text-sm text-muted-foreground">{company}</p>
+      {introduction && (
+        <p className="mt-5 text-sm leading-relaxed text-muted-foreground md:text-base">
+          {introduction}
+        </p>
+      )}
       <ul className="mt-5 list-none space-y-3 text-sm leading-relaxed text-muted-foreground md:text-base">
         {children}
       </ul>
+      {projects}
       <Skills skills={skills} />
     </article>
   );
@@ -39,53 +55,105 @@ export default function WorkPage() {
       <main className="flex-1">
         <section className="mx-auto max-w-5xl px-6 py-14 md:px-10 md:py-20">
           <SectionHeading
-            description="Detailed breakdown of roles, responsibilities, and the technologies I worked with."
+            description="Building AI platforms and taking products from an idea through deployment and ongoing operation."
             eyebrow="Experience"
             title="Work"
           />
 
           <div className="space-y-6">
             <WorkRole
-              company="Snowmountain.ai"
+              company="QwikBuild / Snowmountain.ai"
               period="Aug 2023 – Present"
+              introduction="Joined Snowmountain.ai at its inception and built products from zero to production across AI, enterprise workflows, and financial analysis. Today, I own the production platform around QwikBuild’s multi-agent coding system."
               skills={[
-                "Next.js",
-                "Supabase",
-                "PostgreSQL",
                 "TypeScript",
-                "Vite",
-                "Amazon S3",
+                "React",
+                "Next.js",
+                "Node.js",
+                "PostgreSQL",
+                "Supabase",
+                "AWS",
+                "Vercel",
+                "LLM integrations",
+                "Browser automation",
                 "Puppeteer",
-                "Large Language Models (LLM)",
-                "Chrome Extensions",
-                "React Server Components",
-                "React Query",
-                "Amazon SES",
-                "Amazon RDS",
-                "Amazon Route53",
-                "Amazon Cloudwatch",
-                "Amazon Cognito",
+                "Stripe",
+                "Razorpay",
               ]}
               title="Founding Engineer"
+              projects={
+                <section className="mt-8 border-t border-border/70 pt-6">
+                  <h3 className="text-lg font-semibold text-foreground">
+                    Earlier products at Snowmountain.ai
+                  </h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Most recent first.
+                  </p>
+                  <div className="mt-5 space-y-5 text-sm leading-relaxed text-muted-foreground md:text-base">
+                    <div>
+                      <h4 className="font-medium text-foreground">Capital</h4>
+                      <p className="mt-1">
+                        Built an AI diligence workspace for venture investors and
+                        founders to evaluate pitch decks and investment
+                        opportunities, with configurable agents, multi-document
+                        analysis, private knowledge vaults, deep research,
+                        resumable streamed outputs, and structured investment
+                        reports.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-foreground">Forecast360</h4>
+                      <p className="mt-1">
+                        Built a banking risk-modeling and forecasting platform
+                        for configuring models and scenarios, analyzing loan
+                        portfolios, comparing peer banks, visualizing risk
+                        outputs, and generating reports.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-foreground">
+                        Autonomous Bidding Agent
+                      </h4>
+                      <p className="mt-1">
+                        Built a Chrome and Puppeteer-based browser agent for
+                        time-sensitive bidding workflows, including queued-job
+                        prioritization, dynamic UI navigation, bid submission,
+                        and recovery from session expiry, timeouts, and changing
+                        page state.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-foreground">Hemkund</h4>
+                      <p className="mt-1">
+                        Built a multi-tenant platform for purchase-order
+                        operations, covering document intake, review and
+                        approvals, vendor and retailer synchronization,
+                        dashboards, notifications, and customer-specific
+                        workflows.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              }
             >
               <li>
-                Leading full-stack development to build the web app from scratch —
-                features, performance, authentication, and security.
+                Build the multi-tenant application lifecycle around QwikBuild’s
+                multi-agent coding system, from project setup, authentication,
+                and user management to managed services, custom domains, and
+                deployment.
               </li>
               <li>
-                Next.js applications on Vercel and AWS Amplify.
+                Implement usage metering, billing, and payment integrations with
+                Stripe and Razorpay.
               </li>
               <li>
-                PostgreSQL on Supabase and AWS RDS — indexing, migrations,
-                triggers, functions, and RLS policies.
+                Own full-stack delivery across frontend, backend, PostgreSQL
+                data modeling, cloud infrastructure, security, observability,
+                and UX.
               </li>
               <li>
-                Chrome extensions augmented with LLMs to serve as autonomous web
-                agents.
-              </li>
-              <li>
-                AWS: Amplify, SES, S3, Cognito, RDS, EC2, Route53, and
-                CloudWatch.
+                Work closely with customers to turn business requirements into
+                functioning applications and support them in production.
               </li>
             </WorkRole>
 
