@@ -1,8 +1,7 @@
-import { SectionHeading } from "@/components/section-heading";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
-
-import Skills from "./Skills";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { JournalHeader, JournalFooter } from "@/components/journal-chrome";
+import styles from "../journal.module.css";
 
 type WorkRoleProps = {
   company: string;
@@ -24,43 +23,41 @@ function WorkRole({
   projects,
 }: WorkRoleProps) {
   return (
-    <article className="rounded-2xl border border-border/70 bg-card/80 p-6 shadow-sm transition-shadow hover:shadow-md md:p-8">
-      <span className="inline-flex rounded-full border border-border bg-muted/60 px-3 py-1 text-xs font-medium text-muted-foreground">
-        {period}
-      </span>
-      <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground">
-        {title}
-      </h2>
-      <p className="mt-1 text-sm text-muted-foreground">{company}</p>
-      {introduction && (
-        <p className="mt-5 text-sm leading-relaxed text-muted-foreground md:text-base">
-          {introduction}
-        </p>
-      )}
-      <ul className="mt-5 list-none space-y-3 text-sm leading-relaxed text-muted-foreground md:text-base">
-        {children}
-      </ul>
-      {projects}
-      <Skills skills={skills} />
+    <article className={styles.workRole}>
+      <aside className={styles.roleMargin}>
+        <span className={styles.eyebrow}>{period}</span>
+        <p>{title}</p>
+      </aside>
+      <div className={styles.roleBody}>
+        <h2>{company}</h2>
+        {introduction && <p className={styles.roleIntro}>{introduction}</p>}
+        {projects && <h3 className={styles.responsibilityHeading}>QwikBuild · Production platform</h3>}
+        <ul className={styles.responsibilities}>{children}</ul>
+        {projects}
+        <div className={styles.roleSkills}>
+          <span className={styles.eyebrow}>Skills & tools</span>
+          <ul>{skills.map((skill) => <li key={skill}>{skill}</li>)}</ul>
+        </div>
+      </div>
     </article>
   );
 }
 
 export default function WorkPage() {
   return (
-    <div className="flex min-h-dvh flex-col">
-      <div className="page-gradient pointer-events-none fixed inset-0 -z-10" />
-      <SiteHeader activePath="/work" />
-
-      <main className="flex-1">
-        <section className="mx-auto max-w-5xl px-6 py-14 md:px-10 md:py-20">
-          <SectionHeading
-            description="Building AI platforms and taking products from an idea through deployment and ongoing operation."
-            eyebrow="Experience"
-            title="Work"
-          />
-
-          <div className="space-y-6">
+    <div className={styles.journal}>
+      <a className={styles.skip} href="#main">Skip to content</a>
+      <JournalHeader isWork />
+      <main id="main">
+        <section className={styles.workPageIntro} aria-labelledby="work-title">
+          <span className={styles.eyebrow}>EXPERIENCE / 2019—PRESENT</span>
+          <h1 id="work-title">Work<em>.</em></h1>
+          <div className={styles.workPageSummary}>
+            <p>Building AI platforms and taking products from an idea through deployment and ongoing operation.</p>
+            <Link href="/#work">Selected projects <ArrowUpRight size={16} /></Link>
+          </div>
+        </section>
+        <div className={styles.workRoles}>
             <WorkRole
               company="QwikBuild / Snowmountain.ai"
               period="Aug 2023 – Present"
@@ -82,17 +79,17 @@ export default function WorkPage() {
               ]}
               title="Founding Engineer"
               projects={
-                <section className="mt-8 border-t border-border/70 pt-6">
-                  <h3 className="text-lg font-semibold text-foreground">
+                <section className={styles.earlierProducts}>
+                  <h3>
                     Earlier products at Snowmountain.ai
                   </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
+                  <p className={styles.productOrder}>
                     Most recent first.
                   </p>
-                  <div className="mt-5 space-y-5 text-sm leading-relaxed text-muted-foreground md:text-base">
+                  <div className={styles.productRows}>
                     <div>
-                      <h4 className="font-medium text-foreground">Capital</h4>
-                      <p className="mt-1">
+                      <h4>Capital</h4>
+                      <p>
                         Built an AI diligence workspace for venture investors and
                         founders to evaluate pitch decks and investment
                         opportunities, with configurable agents, multi-document
@@ -102,8 +99,8 @@ export default function WorkPage() {
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-medium text-foreground">Forecast360</h4>
-                      <p className="mt-1">
+                      <h4>Forecast360</h4>
+                      <p>
                         Built a banking risk-modeling and forecasting platform
                         for configuring models and scenarios, analyzing loan
                         portfolios, comparing peer banks, visualizing risk
@@ -111,10 +108,10 @@ export default function WorkPage() {
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-medium text-foreground">
+                      <h4>
                         Autonomous Bidding Agent
                       </h4>
-                      <p className="mt-1">
+                      <p>
                         Built a Chrome and Puppeteer-based browser agent for
                         time-sensitive bidding workflows, including queued-job
                         prioritization, dynamic UI navigation, bid submission,
@@ -123,8 +120,8 @@ export default function WorkPage() {
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-medium text-foreground">Hemkund</h4>
-                      <p className="mt-1">
+                      <h4>Hemkund</h4>
+                      <p>
                         Built a multi-tenant platform for purchase-order
                         operations, covering document intake, review and
                         approvals, vendor and retailer synchronization,
@@ -229,11 +226,13 @@ export default function WorkPage() {
                 webpage.
               </li>
             </WorkRole>
-          </div>
-        </section>
+        </div>
+        <div className={styles.workContact}>
+          <p>Get in touch</p>
+          <a href="mailto:fayazsalim@gmail.com">fayazsalim@gmail.com <ArrowUpRight size={20} /></a>
+        </div>
       </main>
-
-      <SiteFooter />
+      <JournalFooter />
     </div>
   );
 }
