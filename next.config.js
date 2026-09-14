@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   cacheComponents: true,
+  turbopack: { root: __dirname },
+  outputFileTracingRoot: __dirname,
   images: {
     remotePatterns: [
       {
