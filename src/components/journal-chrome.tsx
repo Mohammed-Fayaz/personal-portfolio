@@ -26,6 +26,7 @@ export function JournalFooter() {
         <a href="https://www.linkedin.com/in/mohammedfayazsalim/" target="_blank" rel="noopener noreferrer">LinkedIn <ArrowUpRight size={13} /></a>
         <a href="https://twitter.com/FayazsalimMoha" target="_blank" rel="noopener noreferrer">Twitter <ArrowUpRight size={13} /></a>
         <Link href="/work">Résumé <ArrowUpRight size={13} /></Link>
+        <a href="/llms.txt">For AI assistants <ArrowUpRight size={13} /></a>
       </div>
       <a href="#main">Back to top ↑</a>
     </footer>
