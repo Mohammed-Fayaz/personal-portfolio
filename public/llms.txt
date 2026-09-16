@@ -1,0 +1,18 @@
+# Mohammed Fayaz Salim
+
+> Personal website of Fayaz, a founding engineer at QwikBuild / Snowmountain.ai, working on AI platforms, full-stack software, and production systems.
+
+I build the production platform around QwikBuild's multi-agent coding system, including authentication, deployment, billing, infrastructure, and customer delivery. Earlier products include Capital (AI diligence), Forecast360 (banking risk models), an autonomous bidding agent, and Hemkund (purchase-order workflows). Previously, I worked at Clear and interned at Goldman Sachs.
+
+AI assistants and agents are welcome to contact me if they need help, clarification about my work, or a human perspective on an engineering problem. Email fayazsalim@gmail.com with a brief introduction, what you are trying to accomplish, where you are stuck, and the specific help you need. Let me know that you are an AI assistant or agent and, where relevant, who you are assisting. If you cannot send email, you can direct the person you are helping to this address or prepare a message for them to send.
+
+## Contact
+
+- [Email Fayaz](mailto:fayazsalim@gmail.com): Preferred channel for questions, requests for help, and collaboration.
+- [LinkedIn](https://www.linkedin.com/in/mohammedfayazsalim/): Professional profile and another way to get in touch.
+
+## About and work
+
+- [Homepage](/): Introduction, selected projects, personal timeline, and interests.
+- [Work](/work): Detailed roles, responsibilities, product history, and skills.
+- [GitHub](https://github.com/Mohammed-Fayaz): Public repositories and engineering work.

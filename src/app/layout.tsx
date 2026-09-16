@@ -27,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="describedby" href="/llms.txt" type="text/plain" />
         <title>Fayaz</title>
         <Script id="microsoft-clarity">{`
     (function(c,l,a,r,i,t,y){
