@@ -94,7 +94,7 @@ export default function Home() {
         </section>
 
         <section id="outside" className={styles.outside} aria-labelledby="outside-title">
-          <div className={styles.sectionHead}><div><span className={styles.eyebrow}>03 / PERSONAL INTERESTS</span><h2 id="outside-title">Outside work</h2></div><p>Competitive programming, chess,<br />and strength training.</p></div>
+          <div className={styles.sectionHead}><div><span className={styles.eyebrow}>03 / PERSONAL INTERESTS</span><h2 id="outside-title">Outside work</h2></div><p>Competitive programming, chess,<br />strength training, and investing.</p></div>
           <div className={styles.pursuits}>
             <article className={styles.pursuit}>
               <div className={styles.pursuitLabel}><span>01 / COMPETITIVE PROGRAMMING</span><span>2017—18</span></div>
@@ -120,6 +120,18 @@ export default function Home() {
               ]} /></div>
               <p>A focused cut, with weight and body fat tracked weekly from March to August.</p>
               <details className={styles.moreNotes}><summary>A note on the measurements</summary><p>Body fat readings came from a bioimpedance scale, which recorded 22% to 18%. These are scale estimates, not precise measurements.</p></details>
+            </article>
+            <article id="investing" className={styles.pursuit}>
+              <div className={styles.pursuitLabel}><span>04 / PERSONAL INVESTING</span></div>
+              <h3>My portfolio vs. the NIFTY 50</h3>
+              <Image
+                className={styles.investingChart}
+                src="/images/groww-portfolio-xirr.png"
+                width={453}
+                height={567}
+                alt="Groww’s all-time comparison shows my portfolio at 29.29% XIRR and the NIFTY 50 at 7.86%, a difference of 21.43 percentage points."
+                unoptimized
+              />
             </article>
           </div>
           <div className={styles.also}><span className={styles.eyebrow}>ALSO, AWAY FROM A SCREEN</span><span><Mountain size={19} /> Indoor climbing</span><span><Waves size={19} /> Open water scuba</span></div>
