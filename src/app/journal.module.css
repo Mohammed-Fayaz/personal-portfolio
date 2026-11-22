@@ -103,7 +103,8 @@
 .moreNotes summary { cursor:pointer; text-decoration:underline; text-underline-offset:4px; }
 .moreNotes p { margin-top:14px; font-size:14px; }
 .outside { border-top:1px solid #cccec1; padding:80px 0 0; }
-.pursuits { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:30px; }
+.investingChart { display:block; width:100%; max-width:453px; height:auto; margin-top:24px; }
+.pursuits { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:30px; }
 .pursuit { border-top:2px solid var(--green); padding-top:17px; min-width:0; }
 .pursuitLabel { display:flex; justify-content:space-between; gap:10px; font-size:10px; letter-spacing:.5px; color:var(--muted); }
 .pursuit h3 { font-size:32px; line-height:1.15; letter-spacing:-1px; margin-top:25px; }
